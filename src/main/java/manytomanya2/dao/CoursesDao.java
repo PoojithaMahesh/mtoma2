@@ -1,8 +1,11 @@
 package manytomanya2.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.swing.border.EtchedBorder;
 
 import manytomanya2.dto.Course;
@@ -77,7 +80,12 @@ public void findCourse(int id) {
 }
 
 
-
+public void findAllCourses() {
+	EntityManager entityManager=getEntityManager();
+	Query query=entityManager.createQuery("Select c from Course u");
+	List<Course> courses=query.getResultList();
+	System.out.println(courses);
+}
 
 
 

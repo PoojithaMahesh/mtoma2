@@ -3,6 +3,10 @@ package manytomanya2.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import manytomanya2.dao.CoursesDao;
 import manytomanya2.dao.StudentDao;
 import manytomanya2.dto.Course;
@@ -86,8 +90,34 @@ public static void main(String[] args) {
 //	CoursesDao coursesDao=new CoursesDao();
 //	coursesDao.deleteCourse(1);
 	
-	StudentDao studentDao=new StudentDao();
-	studentDao.deleteStudent(1);
+//	StudentDao studentDao=new StudentDao();
+//	studentDao.deleteStudent(1);
+//	
+	
+	EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("vinod");
+	EntityManager  entityManager=entityManagerFactory.createEntityManager();
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	entityManager.find(Course.class, 2);
+	
+	
+	EntityManager  entityManager1=entityManagerFactory.createEntityManager();
+	
+	entityManager1.find(Course.class, 2);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
